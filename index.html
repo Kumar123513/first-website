@@ -1,0 +1,25 @@
+	cout << "Enter initial guess (x0): ";
+	cin >> x0;
+
+	cout << "Enter required precision: ";
+	cin >> precision;
+
+	double xn = x0;
+	double delta;
+	int i = 0;
+
+	do {
+		x1 = xn - sin(2 * xn) / (2 * cos(2 * xn));
+		delta = fabs(x1 - xn);
+		xn = x1;
+		i++;
+		cout << "Iteration " << i << ": x = " << xn << ", delta = " << delta << endl;
+	} while (delta > precision);
+
+	cout << "\nRoot found: " << xn << endl;
+
+	return 0;
+}
+
+
+	
